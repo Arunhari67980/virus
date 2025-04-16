@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>💀 YOU ARE HACKED 💀</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background-color: red;
+      transition: background-color 0.05s;
+    }
+
+    #message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3rem;
+      font-weight: bold;
+      text-align: center;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div id="message">💀 YOUR DATA HACKED BY ASLI MICH JODE 💀</div>
+
+  <script>
+    let colors = ["red", "white"];
+    let index = 0;
+
+    // Flashing loop
+    setInterval(() => {
+      document.body.style.backgroundColor = colors[index];
+      index = (index + 1) % colors.length;
+    }, 100); // 100ms = fast flash
+
+    // Try to enter fullscreen
+    function goFullscreen() {
+      let docEl = document.documentElement;
+      if (docEl.requestFullscreen) {
+        docEl.requestFullscreen();
+      } else if (docEl.mozRequestFullScreen) { /* Firefox */
+        docEl.mozRequestFullScreen();
+      } else if (docEl.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+        docEl.webkitRequestFullscreen();
+      } else if (docEl.msRequestFullscreen) { /* IE/Edge */
+        docEl.msRequestFullscreen();
+      }
+    }
+
+    // Prompt fullscreen on user interaction
+    document.body.addEventListener("click", goFullscreen);
+    document.body.addEventListener("keydown", goFullscreen);
+  </script>
+</body>
+</html>
